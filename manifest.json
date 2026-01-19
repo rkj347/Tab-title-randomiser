@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Tab Title Randomiser",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Quickly hide or professionalize your browser tabs for screen sharing.",
   "permissions": [
     "tabs",
@@ -29,5 +29,24 @@
       "resources": [ "data/domain_mappings.json" ],
       "matches": [ "<all_urls>" ]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "purge-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Hide all tabs (Purge)"
+    },
+    "undo-tabs": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Undo tab changes"
+    }
+  }
 } 
